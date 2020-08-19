@@ -1,5 +1,7 @@
-from eletronico import Eletronico
-from log import LogMixin
+#from eletronico import Eletronico
+#from log import LogMixin
+from funcoes.heranca_multipla________gerar_log.eletronico import Eletronico
+from funcoes.heranca_multipla________gerar_log.log import LogMixin
 
 
 class Smartphone(Eletronico, LogMixin):

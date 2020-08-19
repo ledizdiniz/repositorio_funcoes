@@ -1,4 +1,5 @@
-from smartphone import Smartphone
+#from smartphone import Smartphone
+from funcoes.heranca_multipla________gerar_log.smartphone import Smartphone
 
 smartphone = Smartphone('Pocophone F1')
 smartphone.conetar()
