@@ -4,10 +4,15 @@ import time
 from PyQt5 import uic
 from PyQt5.QtCore import QUrl, Qt
 from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEngineSettings, QWebEngineProfile
+# pip uninstall PyQt5-sip
+# pip install PyQt5-sip
+# pip install PyQtWebEngine  para installar o modulo
+
+
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QApplication
 
 #diretorio do git
-diretorio = 'C:/Users/leo_e/PycharmProjects/pythonProject1/telas/'
+diretorio = 'telas/'
 
 class Web(QWebEngineView):
 
@@ -81,3 +86,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     browserinternet().inicio("teste","teste","teste")
     sys.exit(app.exec_())
+
