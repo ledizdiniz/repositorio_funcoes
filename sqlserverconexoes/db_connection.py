@@ -6,7 +6,7 @@ def getConnection():
 #initialize the connection to the database
   connection = pyodbc.connect(
     #'DRIVER={SQL Server};SERVER=OPUSQUALE-WIN\DATA;DATABASE=Opusquale;UID=sa;PWD=Opus@2018', check_same_thread=False)
-   'DRIVER={'+config.DATABASE_CONFIG["Driver"]+'} ;'
+   'DRIVER={'+DATABASE_CONFIG["Driver"]+'} ;'
    'SERVER='+DATABASE_CONFIG["Server"]+';'
    'DATABASE='+DATABASE_CONFIG["Database"]+';'
    'UID='+DATABASE_CONFIG["UID"]+';'
@@ -15,14 +15,14 @@ def getConnection():
   cursor = connection.cursor()
   return cursor
   #pass
-  #cursor.close()
+  cursor.close()
 
 
 
 class bancodedados():
     connection = pyodbc.connect(
     #'DRIVER={SQL Server};SERVER=OPUSQUALE-WIN\DATA;DATABASE=Opusquale;UID=sa;PWD=Opus@2018', check_same_thread=False)
-   'DRIVER={'+config.DATABASE_CONFIG["Driver"]+'} ;'
+   'DRIVER={'+DATABASE_CONFIG["Driver"]+'} ;'
    'SERVER='+DATABASE_CONFIG["Server"]+';'
    'DATABASE='+DATABASE_CONFIG["Database"]+';'
    'UID='+DATABASE_CONFIG["UID"]+';'
@@ -132,3 +132,7 @@ def excluir(tabela,row,coluna):
     cursor2.execute ("DELETE FROM "+ tabela+ " where "+coluna+" = '"+row+"'")
     connection.commit()
     connection.close()
+
+
+
+getConnection()
